@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+       int sz=nums.size();
+       vector<vector<int>>subsets; 
+       int tlsb=1<<sz;
+       for(int mask=0;mask<tlsb;mask++){
+        vector<int>subset;
+        for(int i=0;i<sz;i++){
+            if(mask & 1<<i)subset.push_back(nums[i]);
+        }
+        subsets.push_back(subset);
+       }
+       return subsets;
+    }
+};
