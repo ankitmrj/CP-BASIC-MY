@@ -1,0 +1,5 @@
+bool endsWith(const string& fullString, const string& ending) {
+    if (ending.size() > fullString.size()) 
+        return false;
+    return fullString.compare(fullString.size() - ending.size(), ending.size(), ending) == 0;
+}
