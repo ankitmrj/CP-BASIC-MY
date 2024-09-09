@@ -2,3 +2,8 @@
        cout<<floor(log2(n)+1)<<endl; // number of binary digits
 
        cout<<__builtin_popcount(n)<<endl; // number of 1 in binary notation
+
+\/two segment do not intersect to each other
+bool doNotIntersect(int L1, int R1, int L2, int R2) {
+    return (R1 < L2 || R2 < L1);
+} 
