@@ -1,28 +1,44 @@
-vector<int> toposort(int v, vector<vector<int>>& adj) {
-   
-   
-   int indgree(v);
-   for(int i=0;i<v;i++){
-       for(auto it: adj[node]){
-           indgree[it]++;
-       }
-   }
-   queue<int>q;
-   for(int i=0;i<v;i++){
-if(indgree[i]==0){
-    q.push(i);
-}
-vector<int> res;
-   while(!q.empty()){
-       int x=queue.front();
-       q.pop();
-       res.push_back(x);
-       
-       
-       for(auto it :adj[x]){
-           indegree[it]--;
-           if(indegree[it]==0)q.push(it);
-       }
-   }
-    
-}
+vector<int> topologicalSort(vector<vector<int>>& adj) {
+        int V = adj.size();  // Number of vertices
+        
+        // Step 1: Calculate in-degree for each node
+        vector<int> inDegree(V, 0);
+        for (int i = 0; i < V; i++) {
+            for (auto neighbor : adj[i]) {
+                inDegree[neighbor]++;
+            }
+        }
+
+        // Step 2: Initialize queue with nodes having 0 in-degree
+        queue<int> q;
+        for (int i = 0; i < V; i++) {
+            if (inDegree[i] == 0) {
+                q.push(i);
+            }
+        }
+
+        // Step 3: Process the queue
+        vector<int> topoOrder;  // To store the topological order
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+            topoOrder.push_back(node);
+
+            // Decrease the in-degree of each neighbor of the current node
+            for (auto neighbor : adj[node]) {
+                inDegree[neighbor]--;
+                if (inDegree[neighbor] == 0) {
+                    q.push(neighbor);
+                }
+            }
+        }
+
+        // Step 4: If topological sort includes all nodes, return the result
+        if (topoOrder.size() != V) {
+            // If we couldn't process all nodes, there must be a cycle
+            cout << "Cycle detected, topological sort not possible!" << endl;
+            return {};  // Return an empty vector in case of a cycle
+        }
+
+        return topoOrder;  // Return the topological order
+    }
