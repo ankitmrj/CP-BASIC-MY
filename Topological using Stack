@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// DFS function to visit each node and do topological sort
+void dfs(int node, vector<vector<int>>& adj, vector<bool>& visited, stack<int>& st) {
+    visited[node] = true;
+
+    // Explore all adjacent nodes (neighbors)
+    for (auto it : adj[node]) {
+        if (!visited[it]) {
+            dfs(it, adj, visited, st);
+        }
+    }
+
+    // Once all adjacent nodes are processed, push the current node to the stack
+    st.push(node);
+}
+
+// Function to return the topological sort of the graph
+vector<int> toposort(int v, vector<vector<int>>& adj) {
+    vector<bool> visited(v, false);  // To mark the visited nodes
+    stack<int> st;
+
+    // Perform DFS on all unvisited nodes
+    for (int i = 0; i < v; i++) {
+        if (!visited[i]) {
+            dfs(i, adj, visited, st);
+        }
+    }
+
+    // Extract the topological order from the stack
+    vector<int> ans;
+    while (!st.empty()) {
+        ans.push_back(st.top());
+        st.pop();
+    }
+
+    return ans;
+}
+
+int main() {
+    int n, m; // n is number of nodes (courses), m is number of edges (prerequisites)
+    cin >> n >> m;
+
+    // Initialize the adjacency list
+    vector<vector<int>> adj(n);
+
+    // Read the edges (prerequisites)
+    for (int i = 0; i < m; i++) {
+        int x, y;
+        cin >> x >> y;
+        adj[x].push_back(y); // x is a prerequisite for y
+    }
+
+    // Get the topological sort
+    vector<int> topoOrder = toposort(n, adj);
+
+    // Output the topological sort
+    for (int course : topoOrder) {
+        cout << course << " ";
+    }
+    int q;
+    cin>>q;
+    vector<bool>result;
+    for(int i=0;i<q;i++){
+        int x,y;
+        cin>>x>>y;
+   
+    }
+    return 0;
+}
