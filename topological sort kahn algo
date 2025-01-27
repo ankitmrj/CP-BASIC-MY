@@ -1,0 +1,28 @@
+vector<int> toposort(int v, vector<vector<int>>& adj) {
+   
+   
+   int indgree(v);
+   for(int i=0;i<v;i++){
+       for(auto it: adj[node]){
+           indgree[it]++;
+       }
+   }
+   queue<int>q;
+   for(int i=0;i<v;i++){
+if(indgree[i]==0){
+    q.push(i);
+}
+vector<int> res;
+   while(!q.empty()){
+       int x=queue.front();
+       q.pop();
+       res.push_back(x);
+       
+       
+       for(auto it :adj[x]){
+           indegree[it]--;
+           if(indegree[it]==0)q.push(it);
+       }
+   }
+    
+}
