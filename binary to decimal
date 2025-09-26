@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to convert binary string to decimal
+int decimal(const string &s) {
+    int ans = 0, i = 1;  // i = 2^position
+    for (int j = s.size() - 1; j >= 0; j--) {
+        if (s[j] == '1') ans += i;
+        i *= 2;
+    }
+    return ans;
+}
+
+// Function to convert decimal number to binary string
+string binary(int n) {
+    if (n == 0) return "0";
+    string temp = "";
+    while (n) {
+        temp += (n % 2) + '0';  // append '0' or '1'
+        n /= 2;
+    }
+    reverse(temp.begin(), temp.end());
+    return temp;
+}
+
+// Function to count number of digits in a decimal number
+int countdigits(int n) {
+    if (n == 0) return 1;
+    int ans = 0;
+    while (n) {
+        ans++;
+        n /= 10;
+    }
+    return ans;
+}
