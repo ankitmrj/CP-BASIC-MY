@@ -1,0 +1,10 @@
+Chicken McNugget Theorem: 
+The Chicken McNugget Theorem (or Frobenius Coin Problem for two numbers) states that 
+
+
+
+
+When you add two coprime numbers in all possible non-negative ways, small numbers may be missing (holes), but after some point every number becomes possible.
+The very last missing number (the last hole) is 
+largest number that is unreachable in form of ax+by is ab-a-b;
+After ab−a−b every number is represted in form of ax+by where any two coprime integers 𝑎  and 𝑏 , 

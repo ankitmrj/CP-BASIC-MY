@@ -1,8 +1,0 @@
-Chicken McNugget Theorem: 
-The Chicken McNugget Theorem (or Frobenius Coin Problem for two numbers) states that 
-for any two coprime integers 𝑎 a and 𝑏 b, the largest number that cannot be expressed as 𝑎 𝑥 + 𝑏 𝑦 ax+by
-(where 𝑥 x and 𝑦 y are non-negative integers) is 𝑎*𝑏 − 𝑎 − 𝑏 =ab−a−b. 
-Given 𝑎 = 11 a=11 and 𝑏 = 111 b=111: The largest number that cannot be written as 11 𝑥 + 111 𝑦 11x+111y is 11 × 111 − 11 − 111 = 1221 − 122 = 1099 
- Implications: Any number greater than 1099 1099 can be written as a sum of multiples of  11 and  111. For numbers less than or equal to 1099 1099, 
-we can use brute force to check if they can be written as 
-11x+111y.
