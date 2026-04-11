@@ -1,0 +1,24 @@
+vector<array<int,2>> V(100001, {-1, -1}); // works well
+
+vector<vector<int> V(100001,vector<int>(2,-1));// cause tle 
+
+Key Concept
+array<int,2>
+Fixed size (2)
+Stored inside vector directly
+No extra memory allocation
+
+
+vector<int>(2)
+Dynamic size
+Needs separate memory allocation
+Happens 100001 times
+
+
+🚀 When to Use What
+✅ Use vector<array<int,2>>
+Fixed size (like 2, 3, 4)
+Performance matters (CP, interviews)
+❌ Avoid vector<vector<int>>
+When inner size is small and fixed
+When n is large (1e5+)
