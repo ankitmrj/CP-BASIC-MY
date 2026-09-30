@@ -1,67 +1,45 @@
-Chicken McNugget Theorem
+# Chicken McNugget Theorem
 
-Let \(a\) and \(b\) be two positive coprime integers, i.e.
+The **Chicken McNugget Theorem**, also known as the **Frobenius Coin Problem for two numbers**, states that for two positive **coprime integers** `a` and `b`, numbers can be represented in the form:
 
-$$ \gcd(a,b)=1 $$
+\[
+ax + by
+\]
 
-We want to represent numbers in the form
+where `x` and `y` are non-negative integers.
 
-$$ ax+by $$
+## Theorem
 
-where
+If:
 
-$$ x,y\geq 0 $$
+\[
+\gcd(a,b)=1
+\]
 
-are non-negative integers.
+then the **largest integer that cannot be represented** as:
 
-Some small numbers cannot be represented. These are called holes.
+\[
+ax + by
+\]
 
-The largest number that cannot be represented is:
+is:
 
-$$ \boxed{ab-a-b} $$
+\[
+\boxed{ab-a-b}
+\]
 
-This is called the Frobenius number.
+This number is called the **Frobenius number**.
 
-Therefore, every integer greater than \(ab-a-b\) can be represented as
+Therefore, every integer **greater than** `ab-a-b` can be represented in the form:
 
-$$ \boxed{ax+by} $$
-Example: \(a=4,\ b=7\)
+\[
+\boxed{ax+by}
+\]
 
-Since:
+## Example
 
-$$ \gcd(4,7)=1 $$
+Take:
 
-the largest unreachable number is:
-
-$$ 4\times7-4-7 =28-11 =\boxed{17} $$
-
-So 17 cannot be written as
-
-$$ 4x+7y $$
-
-But every number greater than 17 can be represented.
-
-For example:
-
-$$ 18=4(1)+7(2) $$ $$ 19=4(3)+7(1) $$ $$ 20=4(5)+7(0) $$ $$ 21=4(0)+7(3) $$
-
-and so on.
-
-Important point
-
-Don't say:
-
-"After \(ab-a-b\), including \(ab-a-b\), every number is representable."
-
-Because \(ab-a-b\) itself is not representable.
-
-Correct:
-
-$$ \boxed{\text{Every integer }N>ab-a-b\text{ is representable.}} $$
-One-line memory
-$$ \boxed{\gcd(a,b)=1 \Rightarrow \text{largest unreachable number}=ab-a-b} $$
-
-And after that:
-
-all numbers are reachable
-	
+```text
+a = 4
+b = 7
